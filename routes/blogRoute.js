@@ -1,16 +1,15 @@
 const express = require('express');
 const router = express.Router();
+const controller = require('../controllers/blogController');
 
 // home page 
-router.get('/', (req, res) => {
-    res.render('index', { title:'Home' });
-});
+router.get('/', controller.blog_index);
 
 // add blog route 
-router.get('/create', (req, res) => {
-    res.render('add-blog', { title: 'Add Blog' })
-});
+router.get('/create', controller.add_blog);
 
+// blog details route
+router.get('/:id', controller.blog_details);
 
 
 module.exports = router;
