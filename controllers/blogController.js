@@ -1,10 +1,20 @@
 const Blog = require('../models/blog');
 
 const blog_index = (req, res) => {
-    res.render('index', { title:'Home' });
+    Blog.find()
+        .then( (result)=> {
+            res.render('index', { title:'Home' , blogs: result});
+        } )
+        .catch( (err)=> {
+            console.log(err);
+            res.render('404', { tilte: "Blog Not Found" });
+        } );
 }
 
-const add_blog = (req, res) => {
+const add_blog_page = (req, res) => {
+    const blog = {
+        title: req.body
+    }
     res.render('add-blog', { title: 'Add Blog' });
 }
 
@@ -20,4 +30,8 @@ const blog_details = (req, res) => {
         });
 }
 
-module.exports = {blog_index, add_blog , blog_details}
+const save_blog = (req, res) => {
+    console.log(req.body);
+}
+
+module.exports = {blog_index, add_blog_page , blog_details, save_blog}
