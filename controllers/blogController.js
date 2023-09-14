@@ -31,7 +31,24 @@ const blog_details = (req, res) => {
 }
 
 const save_blog = (req, res) => {
-    console.log(req.body);
+    const blog = new Blog(req.body);
+    blog.save()
+        .then( ()=> {
+            res.redirect('/blogs')
+        } )
+        .catch( (err)=> {
+            console.log(err);
+        } );
+
 }
 
-module.exports = {blog_index, add_blog_page , blog_details, save_blog}
+const delete_blog = (req, res) => {
+    const id = req.params.id;
+    Blog.findByIdAndDelete(id)
+        .then( () => {
+            res.redirect('/blogs');
+        })
+        .catch( (err) => console.log(err) );
+}
+
+module.exports = {blog_index, add_blog_page , blog_details, save_blog, delete_blog}
