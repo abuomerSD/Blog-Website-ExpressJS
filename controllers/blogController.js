@@ -46,9 +46,9 @@ const delete_blog = (req, res) => {
     const id = req.params.id;
     Blog.findByIdAndDelete(id)
         .then( () => {
-            res.redirect('/blogs');
+            res.json({ redirect: '/blogs' });
         })
-        .catch( (err) => console.log(err) );
+        .catch( (err) => console.log(err) )
 }
 
 module.exports = {blog_index, add_blog_page , blog_details, save_blog, delete_blog}
