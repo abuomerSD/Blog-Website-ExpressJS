@@ -28,7 +28,7 @@ I have created this repo to practice Node JS and Express js
 
 ### Home Page
 
-![image](/public/1.png)
+![image](/public/Home.png)
 
 ### Add Blog Page
 
