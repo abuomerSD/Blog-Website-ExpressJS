@@ -3,24 +3,6 @@
 this is a Simple Blog Website
 I have created this repo to practice Node JS and Express js
 
-## Screen Shots
-
-### Home Page
-
-![image](/public/1.png)
-
-### Add Blog Page
-
-![image](/public/add.png)
-
-### Blog Details Page
-
-![image](/public/details.png)
-
-### About Website Page
-
-![image](/public/about.png)
-
 ## Website Features:
 
 - Add Blog
@@ -41,3 +23,21 @@ I have created this repo to practice Node JS and Express js
 - node js
 - Express js
 - MongoDb with mongoose orm
+
+## Screen Shots
+
+### Home Page
+
+![image](/public/1.png)
+
+### Add Blog Page
+
+![image](/public/add.png)
+
+### Blog Details Page
+
+![image](/public/details.png)
+
+### About Website Page
+
+![image](/public/about.png)
